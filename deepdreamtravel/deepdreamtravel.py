@@ -126,7 +126,7 @@ class DeepDreamTravel:
                  resize_coeff=0.05,
                  show_iter=100,
                  offset=[0,0,0,0],
-                 temp_dir="./tmp",
+                 temp_dir="tmp\\",
                  start_iter=0,
                  start_index=0,
                  start_offset=0,
@@ -134,7 +134,7 @@ class DeepDreamTravel:
                  octaves=4,
                  iter_n=10,
                  octave_scale=1.4,
-                 output_video="./DeepDreamTravel.avi",
+                 output_video="DeepDreamTravel.avi",
                  fps=30,
                  delete_temp=True,
                  max_memory=3
@@ -215,5 +215,8 @@ class DeepDreamTravel:
 
         # Generating video
         print("Generating video...")
-        ImageToVideo.convert(temp_dir, output_video, fps, delete_temp)
-        print("Video generated to", output_video)
+        file_generated = ImageToVideo.convert(temp_dir, output_video, fps=fps, delete_files=delete_temp)
+        if file_generated:
+            print("Video generated to", output_video)
+        else:
+            print("Error File not generated.")
