@@ -14,6 +14,8 @@ A higher resolution example can be found on [YouTube](https://www.youtube.com/wa
 ## Installation
 Download the code and look at `example.py`.
 
+Linux instalation may require some aditional steps. Please check out this [Tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8) by [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w).
+
 ## Dependencies
 
 * [PIL](https://pillow.readthedocs.io/en/stable/)
