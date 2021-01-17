@@ -12,11 +12,25 @@ This effect is achieved by recursively feeding the image into the network and re
 A higher resolution example can be found on [YouTube](https://www.youtube.com/watch?v=VjcBpVmRm9Y).
 
 ## Installation
-Download the code and look at `example.py`.
+Create and activate a new Anaconda environment
+```
+conda create --name DeepDreamTravel
+conda activate DeepDreamTravel
+```
+Install required dependencies
+```
+pip install -r requirements.txt
+```
+Install Caffe depending on your operating system
+```
+conda install caffe <-- Linux
+conda install caffe -c willyd <-- Windows
+```
 
-Linux instalation may require some aditional steps. Please check out this [Tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8) by [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w).
+## Support
+If you are having issues with the installation, [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w) was kind enough to create a [tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8).
 
-Or ask for [support or post questions/requests here](https://hackcommunity.net/t/trippy-videos-with-deep-dream-travel)
+Additionally, [support, questions, and requests are provided here](https://hackcommunity.net/t/trippy-videos-with-deep-dream-travel)
 ## Dependencies
 
 * [PIL](https://pillow.readthedocs.io/en/stable/)
@@ -25,7 +39,18 @@ Or ask for [support or post questions/requests here](https://hackcommunity.net/t
 * [OpenCV](https://pypi.org/project/opencv-python/)
 
 ## Usage
+### Command line
+```
+python deepdreamtravel.py INPUT_FILE OUTPUT_VIDEO
+```
+or view all options
+```
+python deepdreamtravel.py -h
+```
 
+### Within an application
+View `example.py` for an example of running DeepDreamTravel inside your application.
+Available arguments are listed bellow.
 ```python
 from deepdreamtravel import DeepDreamTravel
 
