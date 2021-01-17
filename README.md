@@ -20,12 +20,14 @@ conda activate DeepDreamTravel
 Install required dependencies
 ```
 pip install -r requirements.txt
+conda install psutil
 ```
 Install Caffe depending on your operating system
 ```
 conda install caffe <-- Linux
 conda install caffe -c willyd <-- Windows
 ```
+
 ## Usage
 ### Command line
 ```
