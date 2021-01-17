@@ -26,18 +26,6 @@ Install Caffe depending on your operating system
 conda install caffe <-- Linux
 conda install caffe -c willyd <-- Windows
 ```
-
-## Support
-If you are having issues with the installation, [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w) was kind enough to create a [tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8).
-
-Additionally, [support, questions, and requests are provided here](https://hackcommunity.net/t/trippy-videos-with-deep-dream-travel)
-## Dependencies
-
-* [PIL](https://pillow.readthedocs.io/en/stable/)
-* [SciPy](https://pypi.org/project/scipy/)
-* [Caffe](https://caffe.berkeleyvision.org/)
-* [OpenCV](https://pypi.org/project/opencv-python/)
-
 ## Usage
 ### Command line
 ```
@@ -75,6 +63,17 @@ dreamer.generate(input_image="noise.jpg",
 )
 ```
 **Note:** The examples were generated with [Places205-GoogLeNet](http://places.csail.mit.edu/downloadCNN.html). You can find other interesting models [here](https://github.com/BVLC/caffe/wiki/Model-Zoo).
+## Dependencies
+
+* [PIL](https://pillow.readthedocs.io/en/stable/)
+* [SciPy](https://pypi.org/project/scipy/)
+* [Caffe](https://caffe.berkeleyvision.org/)
+* [OpenCV](https://pypi.org/project/opencv-python/)
+
+## Support
+If you are having issues with the installation, [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w) was kind enough to create a [tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8).
+
+Additionally, [support, questions, and requests are provided here](https://hackcommunity.net/t/trippy-videos-with-deep-dream-travel)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
