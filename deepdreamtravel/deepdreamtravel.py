@@ -7,7 +7,7 @@ from google.protobuf import text_format
 import scipy.ndimage as nd
 import caffe
 from .utility import *
-from imagetovideo import ImageToVideo
+from deepdreamtravel.imagetovideo import ImageToVideo
 from random import randint
 from pathlib import Path
 
@@ -216,6 +216,10 @@ class DeepDreamTravel:
 
         # Generating video
         print("Generating video...")
+        # Making sure the output_video ends with .avi
+        if Path(output_video).suffix != '.avi':
+            output_video += '.avi'
+
         file_generated = ImageToVideo.convert(temp_dir, output_video, fps=fps, delete_files=delete_temp)
         if file_generated:
             print("Video generated to", output_video)
