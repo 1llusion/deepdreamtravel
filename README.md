@@ -16,6 +16,7 @@ Download the code and look at `example.py`.
 
 Linux instalation may require some aditional steps. Please check out this [Tutorial](https://www.youtube.com/watch?v=f1HLevIo0Z8) by [Nerdy Rodent](https://www.youtube.com/channel/UC4-5v-f-xKnbi1yaAuRSi_w).
 
+Or ask for [support or post questions/requests here](https://hackcommunity.net/t/trippy-videos-with-deep-dream-travel)
 ## Dependencies
 
 * [PIL](https://pillow.readthedocs.io/en/stable/)
