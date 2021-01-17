@@ -1,5 +1,6 @@
 import numpy as np
 import PIL.Image
+from pathlib import Path
 
 
 # a couple of utility functions for converting to and from Caffe's input image layout
@@ -24,7 +25,7 @@ def save_images(images_arr, last_image, output_dir="", fmt='jpeg'):
     for image in images_arr:
         image = image / 255.0
         image = np.uint8(np.clip(image, 0, 1) * 255)
-        PIL.Image.fromarray(image).save(output_dir + "\\" + str(img_num) + ".jpg", fmt)
+        PIL.Image.fromarray(image).save(Path(output_dir, str(img_num) + ".jpg"), fmt)
         img_num += 1
 
     return_image = images_arr[-1]

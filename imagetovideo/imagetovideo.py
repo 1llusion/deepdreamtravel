@@ -1,5 +1,6 @@
 import cv2
 import os.path
+from pathlib import Path
 
 
 class ImageToVideo(object):
@@ -32,7 +33,7 @@ class ImageToVideo(object):
         filename, lst_index = ImageToVideo.get_filename(dir_in, prefix, file_num, extension, lst_index=lst_index)
         if not filename:
             return False
-        img = cv2.imread(filename)
+        img = cv2.imread(str(filename))
         height, width, layers = img.shape
         size = (width, height)
         out = cv2.VideoWriter(out, cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
@@ -46,7 +47,7 @@ class ImageToVideo(object):
                 file_exists = False
                 break
 
-            img = cv2.imread(filename)
+            img = cv2.imread(str(filename))
             out.write(img)
             if delete_files:
                 os.unlink(filename)
@@ -68,23 +69,23 @@ class ImageToVideo(object):
         """
         # Finding file for a single prefix
         if lst_index == -1:
-            if os.path.isfile(dir_in + str(file_num) + extension):
-                return dir_in + prefix + str(file_num) + extension, -1
+            if os.path.isfile(Path(dir_in, str(file_num) + extension)):
+                return Path(dir_in, prefix + str(file_num) + extension), -1
             else:
                 return False, False
 
         # Finding file for list of prefixes
         prefix_len = len(prefix)
-        if os.path.isfile(dir_in + prefix[lst_index] + str(file_num) + extension):
-            return dir_in + prefix[lst_index] + str(file_num) + extension, lst_index
+        if os.path.isfile(Path(dir_in, prefix[lst_index] + str(file_num) + extension)):
+            return Path(dir_in, prefix[lst_index] + str(file_num) + extension), lst_index
         # Checking next index (and if it is not out of bounds)
-        elif lst_index < prefix_len and os.path.isfile(dir_in + prefix[lst_index + 1] + prefix[lst_index] + str(file_num) + extension):
-            return dir_in + prefix[lst_index + 1] + str(file_num) + extension, lst_index + 1
+        elif lst_index < prefix_len and os.path.isfile(Path(dir_in, prefix[lst_index + 1] + prefix[lst_index] + str(file_num) + extension)):
+            return Path(dir_in, prefix[lst_index + 1] + str(file_num) + extension), lst_index + 1
 
         # If none of the above work, go through the whole list
         for i in range(prefix_len):
-            if os.path.isfile(dir_in + prefix[i] + str(file_num) + extension):
-                return dir_in + prefix[i] + str(file_num) + extension, i
+            if os.path.isfile(Path(dir_in, prefix[i] + str(file_num) + extension)):
+                return Path(dir_in + prefix[i] + str(file_num) + extension), i
 
         # If after all this nothing is found, return false
         return False, False

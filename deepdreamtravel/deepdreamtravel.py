@@ -9,6 +9,7 @@ import caffe
 from .utility import *
 from imagetovideo import ImageToVideo
 from random import randint
+from pathlib import Path
 
 class DeepDreamTravel:
     objectives = []
@@ -126,7 +127,7 @@ class DeepDreamTravel:
                  resize_coeff=0.05,
                  show_iter=100,
                  offset=[0,0,0,0],
-                 temp_dir="tmp\\",
+                 temp_dir="tmp",
                  start_iter=0,
                  start_index=0,
                  start_offset=0,
@@ -154,7 +155,7 @@ class DeepDreamTravel:
         show_image = show_iter  # Show image every X iterations
         offset = offset  # Left, Top, Right, Bottom
 
-        directory = temp_dir
+        directory = Path(temp_dir)
         if not os.path.exists(directory):
             os.makedirs(directory)
 
