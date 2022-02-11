@@ -33,7 +33,7 @@ Markdown==3.3.2
 MarkupSafe==1.1.1
 mlagents==0.21.0
 mlagents-envs==0.21.0
-numpy==1.18.5
+numpy==1.21.0
 oauthlib==3.1.0
 opencv-python==4.2.0.32
 opt-einsum==3.2.1
